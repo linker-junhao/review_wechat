@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
   {
-    path: '/login-redirect-to',
+    path: '/login-redirect-to/:path',
+    props: true,
     component: () => import('@/views/loginRedirectTo')
   },
   {

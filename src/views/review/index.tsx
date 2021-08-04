@@ -1,5 +1,6 @@
+import { getUserInfo } from '@/api';
 import TargetBasicInfo from '@/component/TargetBasicInfo';
-import { defineComponent, reactive, ref, withModifiers } from 'vue';
+import { defineComponent, onMounted, reactive, ref, withModifiers } from 'vue';
 
 export default defineComponent({
   name: 'Review',
@@ -22,6 +23,10 @@ export default defineComponent({
       voidIconClass: 'el-icon-star-off text-2xl',
       colors: ['#99A9BF', '#F7BA2A', '#FF9900'],
     }
+
+    onMounted(() => {
+      getUserInfo()
+    })
 
     return () => (
       <div>
